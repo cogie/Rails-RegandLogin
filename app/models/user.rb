@@ -1,5 +1,7 @@
 class User < ApplicationRecord
-    VALID_EMAIL_REGEX = \A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+    has_secure_password
+
+    VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
      #validate the format of an email address in a model.   
     validates :email, presence: true,
